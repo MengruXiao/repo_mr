@@ -1,0 +1,21 @@
+https://aws.amazon.com/cn/cli/?nc1=h_ls
+
+aws s3 sync s3://"myBucket"/"this folder" C:\\Users\Desktop
+
+aws s3 sync 是一个 AWS CLI 命令，用于在本地文件系统和 Amazon S3 之间同步文件和目录。该命令会将源路径和目标路径之间的文件和目录进行双向同步，即根据源和目标之间的差异来上传和下载文件。
+
+命令 aws s3 sync s3://"myBucket"/"this folder" C:\\Users\Desktop 的具体解释如下：
+
+aws: 调用 AWS 命令行界面 (CLI)。
+s3: 指定要使用的 AWS 服务是 S3（Simple Storage Service）。
+sync: 表示同步操作，即根据源和目标之间的差异来上传和下载文件。
+s3://"myBucket"/"this folder": 这是 S3 存储桶中的源路径。s3:// 是 S3 URI 的前缀，myBucket 是存储桶的名称，this folder 是存储桶中的一个目录。注意，URI 中的双斜杠 // 是必要的，因为它们是 URI 规范的一部分。
+C:\\Users\Desktop: 这是本地文件系统中的目标路径，即你想要同步到的位置。在 Windows 系统中，路径使用反斜杠 \，并且因为反斜杠在命令行中通常是转义字符，所以每个反斜杠都需要被双写，即 \\。
+这条命令的作用是将 S3 存储桶 myBucket 中的 this folder 目录与本地计算机上 C:\Users\Desktop 目录进行同步。如果 this folder 中的某个文件在本地不存在，该文件将被下载到本地目录。如果本地目录中有文件而 this folder 中没有，则该文件不会被删除（除非使用了 --delete 选项）。
+
+请注意，为了成功运行此命令，你需要确保：
+
+AWS CLI 已经安装并配置好。
+你拥有访问 S3 存储桶 myBucket 和 this folder 目录的权限。
+本地路径 C:\Users\Desktop 存在，或者你愿意让 AWS CLI 创建它（如果它不存在的话）。
+最后，请确保在命令行中正确输入路径和选项，特别是要注意路径中的斜杠和反斜杠的使用。

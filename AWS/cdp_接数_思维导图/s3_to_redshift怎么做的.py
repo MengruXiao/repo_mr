@@ -1,0 +1,3 @@
+aws的copy语句，把csv文件copy into redshift
+然后有张mapping表规范字段以及字段类型
+
